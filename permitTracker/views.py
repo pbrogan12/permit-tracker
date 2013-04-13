@@ -74,7 +74,8 @@ def trainer(request, trainerId=None):
             return render_to_response('trainer.html', locals(), context_instance=RequestContext(request))
     elif request.method == "POST":
         accountId = MyProfile.objects.get(user_id=request.user.id)
-        form = TrainerForm(request.POST, instance=trainer)
+        trainer = Trainer(account_id=accountId.id)
+	form = TrainerForm(request.POST, instance=trainer)
         if form.is_valid():
             form.save()
             return redirect('trainer_view')
