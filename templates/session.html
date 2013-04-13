@@ -76,8 +76,8 @@
                       <td></td>
                       {% endif %}
 
-                      <td><a class="btn btn-danger" href="{% url session_view i.id %}remove"><i class="icon-remove icon-white"></i></a>
-                          <a class="btn btn-primary" href="{% url session_edit i.id %}"><i class="icon-edit icon-white"></i></a></td>
+                      <td><a class="btn btn-danger" href="{% url "session_view" i.id %}remove"><i class="icon-remove icon-white"></i></a>
+                          <a class="btn btn-primary" href="{% url "session_edit" i.id %}"><i class="icon-edit icon-white"></i></a></td>
                   </tr>
             {% endfor %}
             </table>
